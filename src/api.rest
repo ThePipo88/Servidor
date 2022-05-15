@@ -18,3 +18,12 @@ Content-Type: application/json
     "edad_emp":"23",
     "fecNacimiento":'1999-03-02'
 }
+{
+    "tipo_tra":"Contratacion",
+    "departamento_id": ,
+    "ciclo":
+    {
+        "nombre_cic":"Legal",
+        "estado_cic":true
+    }
+}
