@@ -1,0 +1,12 @@
+//Sing up
+###
+POST http://localhost:3977/api/v1/sign-up
+Content-Type: application/json
+
+{
+    "nombre_org": "Credecoop",
+    "descripcion_org": "Solidez y confianza",
+    "tipo_org": "Financiera",
+    "correo_org": "crede@gmail.com",
+    "clave_org": "una"
+}
