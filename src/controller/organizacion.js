@@ -3,17 +3,10 @@ const Organizacion = require("../models/organizacion");
 
 
 function signUp(req, res) {
-    const organizacion = new Organizacion();
 
-    const { nombre_org, descripcion_org, tipo_org, correo_org, clave_org } = req.body;
+    const organizacion = new Organizacion(req.body);
 
-    organizacion.nombre_org = nombre_org;
-    organizacion.descripcion_org = descripcion_org;
-    organizacion.tipo_org = tipo_org;
-    organizacion.correo_org = correo_org;
-    organizacion.clave_org = clave_org;
-
-    bcrypt.hash(clave_org, null, null, function (err, hash) {
+    bcrypt.hash(organizacion.clave_org, null, null, function (err, hash) {
         if (err) {
             res.status(500).send({ message: "Error enciptando la contrasena." });
         } else {
