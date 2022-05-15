@@ -10,3 +10,11 @@ Content-Type: application/json
     "correo_org": "crede@gmail.com",
     "clave_org": "una"
 }
+
+{
+    "nombre_emp":"Michael",
+    "apellido1_emp":"Solis",
+    "apellido2_emp":"Alvarado",
+    "edad_emp":"23",
+    "fecNacimiento":'1999-03-02'
+}
