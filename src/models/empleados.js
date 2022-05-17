@@ -5,7 +5,7 @@ const EmpleadosSchema = mongoose.Schema({
     apellido1_emp: String,
     apellido2_emp: String,
     edad_emp: String,
-    fecNacimiento_emp: Date
+    fecNacimiento_emp: String
 });
 
 module.exports = mongoose.model("empleado", EmpleadosSchema);

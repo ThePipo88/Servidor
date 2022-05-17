@@ -4,26 +4,26 @@ POST http://localhost:3977/api/v1/sign-up
 Content-Type: application/json
 
 {
-    "nombre_org": "Credecoop",
+    "nombre_org": "Credecoop1",
     "descripcion_org": "Solidez y confianza",
     "tipo_org": "Financiera",
-    "correo_org": "crede@gmail.com",
+    "correo_org": "crede1@gmail.com",
     "clave_org": "una"
 }
 
-{
-    "nombre_emp":"Michael",
-    "apellido1_emp":"Solis",
-    "apellido2_emp":"Alvarado",
-    "edad_emp":"23",
-    "fecNacimiento":'1999-03-02'
-}
-{
-    "tipo_tra":"Contratacion",
-    "departamento_id": ,
-    "ciclo":
-    {
-        "nombre_cic":"Legal",
-        "estado_cic":true
-    }
-}
+# {
+#     "nombre_emp":"Michael",
+#     "apellido1_emp":"Solis",
+#     "apellido2_emp":"Alvarado",
+#     "edad_emp":"23",
+#     "fecNacimiento":"1999-03-02"
+# }
+# {
+#     "tipo_tra":"Contratacion",
+#     "departamento_id":"12" ,
+#     "ciclo":
+#     {
+#         "nombre_cic":"Legal",
+#         "estado_cic":true
+#     }
+# }
