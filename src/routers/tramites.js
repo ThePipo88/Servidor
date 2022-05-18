@@ -3,7 +3,7 @@ const TramitesController = require("../controller/tramites");
 
 const api = express.Router();
 
-api.post("/add", TramitesController.add);
+api.post("/registrar/tramites", TramitesController.registrar);
 
 //Exportar el api
 

@@ -21,7 +21,9 @@ app.use(bodyParser.json());
 //Router Basic
 //Para cargar las rutas de organizacion
 app.use(`/api/${API_VERSION}`, organizacionRoutes);
-// app.use(`/api/${API_VERSION}`, empleadosRoutes);
-// app.use(`/api/${API_VERSION}`, tramitesRoutes);
+//Para cargar las rutas de empleados
+app.use(`/api/${API_VERSION}`, empleadosRoutes);
+//Para cargar las rutas de tramites
+app.use(`/api/${API_VERSION}`, tramitesRoutes);
 
 module.exports = app;

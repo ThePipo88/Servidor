@@ -3,7 +3,7 @@ const EmpleadosController = require("../controller/empleados");
 
 const api = express.Router();
 
-api.post("/add", EmpleadosController.add);
+api.post("/registrar/usuarios", EmpleadosController.registrar);
 
 //Exportar el api
 

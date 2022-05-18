@@ -6,8 +6,10 @@ const TramitesSchema = mongoose.Schema({
     tipo_org: String,
     ciclo_tra:
     {
-        nombre_cic:String,
-        estado_cic:Boolean
+        ciclo: {
+            nombre_cic: String,
+            estado_cic: Boolean
+        }
     }
 });
 

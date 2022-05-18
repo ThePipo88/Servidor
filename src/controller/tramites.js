@@ -1,8 +1,7 @@
 const bcrypt = require("bcrypt-nodejs");
 const Tramites = require("../models/tramites");
 
-function add (req, res)
-{
+function registrar(req, res) {
     const tramites = new Tramites(req.body);
 
     tramites.save((err, userStored) => {
@@ -19,5 +18,5 @@ function add (req, res)
 }
 
 module.exports = {
-    add
+    registrar
 };

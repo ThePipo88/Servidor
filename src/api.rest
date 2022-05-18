@@ -11,19 +11,34 @@ Content-Type: application/json
     "clave_org": "una"
 }
 
-# {
-#     "nombre_emp":"Michael",
-#     "apellido1_emp":"Solis",
-#     "apellido2_emp":"Alvarado",
-#     "edad_emp":"23",
-#     "fecNacimiento":"1999-03-02"
-# }
-# {
-#     "tipo_tra":"Contratacion",
-#     "departamento_id":"12" ,
-#     "ciclo":
-#     {
-#         "nombre_cic":"Legal",
-#         "estado_cic":true
-#     }
-# }
+//Registrar empleados
+###
+POST http://localhost:3977/api/v1/registrar/usuarios
+Content-Type: application/json
+
+{
+    "nombre_emp": "Maikol",
+    "cedula_emp": "118920988",
+    "apellido1_emp": "Solis",
+    "apellido2_emp": "Alvarado",
+    "edad_emp": 23,
+    "fecNacimiento_emp": "1999-03-02"
+}
+
+###
+POST http://localhost:3977/api/v1/registrar/tramites
+Content-Type: application/json
+
+{
+    "tipo_tra": "Renovacion",
+    "departamento_id": "3js9f3jf83hfejwrf834bf",
+    "tipo_org": "Administrativa",
+    "ciclo_tra":
+    {
+        "ciclo": {
+            "nombre_cic": "Financiero",
+            "estado_cic": false
+        }
+    }
+}
+

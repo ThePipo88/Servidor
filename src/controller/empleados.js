@@ -1,8 +1,7 @@
 const bcrypt = require("bcrypt-nodejs");
 const Empleados = require("../models/empleados");
 
-function add (req, res)
-{
+function registrar(req, res) {
     const empleados = new Empleados(req.body);
 
     empleados.save((err, userStored) => {
@@ -19,5 +18,5 @@ function add (req, res)
 }
 
 module.exports = {
-    add
+    registrar
 };
