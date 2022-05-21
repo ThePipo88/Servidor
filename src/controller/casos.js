@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt-nodejs");
-const casos = require("../models/casos");
+const Casos = require("../models/casos");
 
 
 async function registrar(req, res) {
