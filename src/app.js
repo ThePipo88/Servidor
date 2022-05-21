@@ -10,6 +10,9 @@ const { API_VERSION } = require('./config');
 const organizacionRoutes = require('./routers/organizacion');
 const empleadosRoutes = require('./routers/empleados');
 const tramitesRoutes = require('./routers/tramites');
+const departamentosRoutes = require('./routers/departamentos');
+const casosRoutes = require('./routers/casos');
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -25,5 +28,9 @@ app.use(`/api/${API_VERSION}`, organizacionRoutes);
 app.use(`/api/${API_VERSION}`, empleadosRoutes);
 //Para cargar las rutas de tramites
 app.use(`/api/${API_VERSION}`, tramitesRoutes);
+//Para cargar las rutas de casos
+app.use(`/api/${API_VERSION}`, casosRoutes);
+//Para cargar las rutas de departamentos
+app.use(`/api/${API_VERSION}`, departamentosRoutes);
 
 module.exports = app;
