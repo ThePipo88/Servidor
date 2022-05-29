@@ -65,3 +65,17 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3977/api/v1/eliminar/6288594676f7807960930e60
+
+//Sing up
+###
+POST http://localhost:3977/api/v1/registrar/casos
+Content-Type: application/json
+
+{
+    "fecApertura_cas": "2000-08-08",
+    "fecFinalizacion_cas": "2000-09-08",
+    "nume_cas": 1,
+    "formato_cas": "Arial",
+    "isAbierto_cas": true,
+    "id_tramite": "sdapdaposfmkspkp"
+}
