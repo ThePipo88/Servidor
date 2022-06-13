@@ -18,7 +18,6 @@ async function registrar(req, res) {
     })
 }
 
-
 async function findById(req, res) {
 
     const caso = await Casos.findById(req.params.id, (err, userStored) => {

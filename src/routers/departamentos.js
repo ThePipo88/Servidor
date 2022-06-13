@@ -3,7 +3,7 @@ const DepartamentosController = require("../controller/departamentos");
 
 const api = express.Router();
 
-api.post("/registrar/usuarios", DepartamentosController.registrar);
+api.post("/registrar/departamento", DepartamentosController.registrar);
 api.get("/obtener/:id", DepartamentosController.findById);
 api.get("/obtener/", DepartamentosController.findAll);
 api.put("/actualizar/:id", DepartamentosController.updateDepartamento);

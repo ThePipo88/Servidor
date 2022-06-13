@@ -65,3 +65,20 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3977/api/v1/eliminar/6288594676f7807960930e60
+
+//Usuarios
+
+###
+POST http://localhost:3977/api/v1/registrar/usuario
+Content-Type: application/json
+
+{
+    "nombre_usuario": "una",
+    "rol": "Administrador",
+    "contrasena": "123",
+    "organizacion_id": "3js9f3jf83hfejwrf834bf"
+}
+
+
+###
+GET http://localhost:3977/api/v1/obtener/usuario/62a55dad7e7883a2ed9f731b
