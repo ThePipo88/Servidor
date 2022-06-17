@@ -3,7 +3,7 @@ const OrganizacionController = require("../controller/organizacion");
 
 const api = express.Router();
 
-api.post("/crearDepartamento", OrganizacionController.crearDepartamento);
+api.post("/crearOrganizacion", OrganizacionController.crearOrganizacion);
 
 //Exportar el api
 

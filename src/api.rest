@@ -1,28 +1,26 @@
 //Sing up
 ###
-POST http://localhost:3977/api/v1/sign-up
+POST http://localhost:3977/api/v1/crearOrganizacion
 Content-Type: application/json
 
 {
     "nombre_org": "Credecoop1",
     "descripcion_org": "Solidez y confianza",
     "tipo_org": "Financiera",
-    "correo_org": "crede1@gmail.com",
+    "correo_org": "crede2@gmail.com",
     "clave_org": "una"
 }
 
 //Registrar empleados
 ###
-POST http://localhost:3977/api/v1/registrar/usuarios
+POST http://localhost:3977/api/v1/registrar/usuario
 Content-Type: application/json
 
 {
-    "nombre_emp": "Pedro",
-    "cedula_emp": "145678890",
-    "apellido1_emp": "Badilla",
-    "apellido2_emp": "Arias",
-    "edad_emp": 21,
-    "fecNacimiento_emp": "2000-08-08"
+    "nombre_usuario": "String",
+    "rol": "String",
+    "contrasena": "String",
+    "organizacion_id": "Object"
 }
 
 ###
@@ -49,6 +47,10 @@ GET http://localhost:3977/api/v1/obtener/628804d9ecd45d102aafcdb32
 ###
 GET http://localhost:3977/api/v1/obtener
 
+###
+GET http://localhost:3977/api/v1/obtener/usuario/login/ice/345
+
+
 
 ###
 PUT http://localhost:3977/api/v1/actualizar/6284722a6819e4f9b4fb1b0dd
@@ -73,10 +75,10 @@ POST http://localhost:3977/api/v1/registrar/usuario
 Content-Type: application/json
 
 {
-    "nombre_usuario": "una",
-    "rol": "Administrador",
-    "contrasena": "123",
-    "organizacion_id": "3js9f3jf83hfejwrf834bf"
+    "nombre_usuario": "una123",
+    "rol": "Ingeniero",
+    "contrasena": "una321",
+    "organizacion_id": "3js9f3jf83hfejwrf834bfss"
 }
 
 

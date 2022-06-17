@@ -41,7 +41,38 @@ async function findById(req, res) {
     }).clone().catch(function (err) { console.log(err) })
 }
 
+
+async function findByNameAndPassword(req, res) {
+
+    const usuario = await Usuarios.find({ nombre_usuario: req.params.nombre }, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El usuario consultado no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando los usuarios" });
+            } else {
+
+                if (userStored.length > 0) {
+
+                    bcrypt.compare(req.params.contrasena, userStored[0].contrasena, (err, resc) => {
+                        if (resc) {
+                            res.status(200).send({ user: userStored });
+                        } else {
+                            res.status(500).send({ message: "Usuario o contrasena erroneos" });
+                        }
+                    })
+
+                } else {
+                    res.status(500).send({ message: "El usuario consultado no existe" });
+                }
+
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
 module.exports = {
     registrar,
-    findById
+    findById,
+    findByNameAndPassword
 };

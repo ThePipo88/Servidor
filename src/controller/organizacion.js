@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt-nodejs");
 const Organizacion = require("../models/organizacion");
 
 
-async function crearDepartamento(req, res) {
+async function crearOrganizacion(req, res) {
 
     const organizacion = new Organizacion(req.body);
 
@@ -21,7 +21,7 @@ async function crearDepartamento(req, res) {
 }
 
 module.exports = {
-    crearDepartamento
+    crearOrganizacion
 };
 
 /*
