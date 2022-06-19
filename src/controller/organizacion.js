@@ -2,7 +2,30 @@ const bcrypt = require("bcrypt-nodejs");
 const Organizacion = require("../models/organizacion");
 
 
-function signUp(req, res) {
+async function crearOrganizacion(req, res) {
+
+    const organizacion = new Organizacion(req.body);
+
+    //Guardar usuario en base de datos
+    organizacion.save((err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El usuario ya existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error creandon el usuario" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    })
+}
+
+module.exports = {
+    crearOrganizacion
+};
+
+/*
+async function signUp(req, res) {
 
     const organizacion = new Organizacion(req.body);
 
@@ -26,8 +49,4 @@ function signUp(req, res) {
             })
         }
     })
-}
-
-module.exports = {
-    signUp
-};
+} */

@@ -7,8 +7,7 @@ const OrganizacionSchema = mongoose.Schema({
     correo_org: {
         type: String,
         unique: true
-    },
-    clave_org: String
+    }
 });
 
 module.exports = mongoose.model("organizacione", OrganizacionSchema);
