@@ -1,14 +1,14 @@
 //Sing up
 ###
-POST http://localhost:3977/api/v1/crearOrganizacion
+POST http://localhost:3977/api/v1/organizacion/crearOrganizacion
 Content-Type: application/json
 
 {
-    "nombre_org": "Credecoop1",
-    "descripcion_org": "Solidez y confianza",
-    "tipo_org": "Financiera",
-    "correo_org": "crede2@gmail.com",
-    "clave_org": "una"
+    "nombre_org": "Credecoop3ssss34",
+    "descripcion_org": "Solidezsssdf y confianza",
+    "tipo_org": "Financisssdfera",
+    "correo_org": "crede2@ssgmail.sdfcom",
+    "clave_org": "ussdfna"
 }
 
 //Registrar empleados
@@ -24,33 +24,22 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3977/api/v1/registrar/tramites
+POST http://localhost:3977/api/v1/empleados/registrar/empleados
 Content-Type: application/json
 
 {
-    "tipo_tra": "Renovacion",
-    "departamento_id": "3js9f3jf83hfejwrf834bf",
-    "tipo_org": "Administrativa",
-    "ciclo_tra":
-    {
-        "ciclo": {
-            "nombre_cic": "Financiero",
-            "estado_cic": false
-        }
-    }
+    "nombre_emp": "dfg",
+    "apellidos_emp": "sdff",
+    "cedula_emp": "jssssddddssscdddf",
+    "fecNacimiento_emp": "2002-08-01",
+    "tipoEmpleado": "jsdf",
+    "id_departamento": "sdsdfssdfsdfpudf"
 }
 
-###
-GET http://localhost:3977/api/v1/obtener/628804d9ecd45d102aafcdb32
 
 
 ###
-GET http://localhost:3977/api/v1/obtener
-
-###
-GET http://localhost:3977/api/v1/obtener/usuario/login/ice/345
-
-
+GET http://localhost:3977/api/v1/empleados/obtener/empleadosPorDepartamento/62ad57cf6bd035518908f25e
 
 ###
 PUT http://localhost:3977/api/v1/actualizar/6284722a6819e4f9b4fb1b0dd
@@ -83,4 +72,24 @@ Content-Type: application/json
 
 
 ###
+POST http://localhost:3977/api/v1/registrar/departamento
+Content-Type: application/json
+
+{
+    "nombre_dep": "String",
+    "jefe_dep": "String",
+    "dir_dep": "String",
+    "tel_dep": 88907644,
+    "correo_dep": "String"
+}
+
+###
 GET http://localhost:3977/api/v1/obtener/usuario/62a55dad7e7883a2ed9f731b
+Content-Type: application/json
+
+{
+    "nombre_usuario": "una123",
+    "rol": "Ingeniero",
+    "contrasena": "una321",
+    "organizacion_id": "3js9f3jf83hfejwrf834bfss"
+}

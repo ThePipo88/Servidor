@@ -3,6 +3,7 @@ const Empleados = require("../models/empleados");
 
 
 async function registrar(req, res) {
+
     const empleados = new Empleados(req.body);
 
     await empleados.save((err, userStored) => {
@@ -79,7 +80,29 @@ async function deleteEmpleado(req, res) {
         }
     }).clone().catch(function (err) { console.log(err) })
 
+}
 
+async function getAllByIdDepartamento(req, res) {
+
+    await Empleados.find({ id_departamento: req.params.id }, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El usuario consultado no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando los usuarios" });
+            } else {
+
+                if (userStored.length > 0) {
+
+                    res.status(200).send({ user: userStored });
+
+                } else {
+                    res.status(500).send({ message: "El usuario consultado no existe" });
+                }
+
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
 }
 
 module.exports = {
@@ -87,5 +110,6 @@ module.exports = {
     findById,
     findAll,
     updateEmpleado,
-    deleteEmpleado
+    deleteEmpleado,
+    getAllByIdDepartamento
 };

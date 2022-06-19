@@ -3,9 +3,9 @@ const UsuariosController = require("../controller/usuarios");
 
 const api = express.Router();
 
-api.post("/registrar/usuario", UsuariosController.registrar);
-api.get("/obtener/usuario/login/:nombre/:contrasena", UsuariosController.findByNameAndPassword);
-api.get("/obtener/usuario/:id", UsuariosController.findById);
+api.post("/usuarios/registrar/usuario", UsuariosController.registrar);
+api.get("/usuarios/obtener/usuario/login/:nombre/:contrasena", UsuariosController.findByNameAndPassword);
+api.get("/usuarios/obtener/usuario/:id", UsuariosController.findById);
 
 //Exportar el api
 

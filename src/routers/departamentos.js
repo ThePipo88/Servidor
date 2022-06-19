@@ -3,10 +3,10 @@ const DepartamentosController = require("../controller/departamentos");
 
 const api = express.Router();
 
-api.post("/registrar/departamento", DepartamentosController.registrar);
-api.get("/obtener/:id", DepartamentosController.findById);
-api.get("/obtener/", DepartamentosController.findAll);
-api.put("/actualizar/:id", DepartamentosController.updateDepartamento);
-api.delete("/eliminar/:id", DepartamentosController.deleteDepartamento);
+api.post("/departamento/registrar", DepartamentosController.registrar);
+api.get("/departamento/obtener/:id", DepartamentosController.findById);
+api.get("/departamento/getAll", DepartamentosController.findAll);
+api.put("/departamento/actualizar/:id", DepartamentosController.updateDepartamento);
+api.delete("/departamento/eliminar/:id", DepartamentosController.deleteDepartamento);
 
 module.exports = api;
