@@ -53,7 +53,7 @@ async function findAll(req, res) {
 
 async function updateDepartamento(req, res) {
 
-    const departamento = await Departamentos.findByIdAndUpdate(req.params.id, req.body, (err, userStored) => {
+    await Departamentos.findByIdAndUpdate(req.params.id, req.body, (err, userStored) => {
         if (err) {
             res.status(500).send({ message: "El departamento a actualizar no existe" });
         } else {
