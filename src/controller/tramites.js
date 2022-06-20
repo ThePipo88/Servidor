@@ -6,10 +6,10 @@ function registrar(req, res) {
 
     tramites.save((err, userStored) => {
         if (err) {
-            res.status(500).send({ message: "El usuario ya existe" });
+            res.status(500).send({ message: "El tramite ya existe" });
         } else {
             if (!userStored) {
-                res.status(404).send({ message: "Error creandon el usuario" });
+                res.status(404).send({ message: "Error creando el tramite" });
             } else {
                 res.status(200).send({ user: userStored });
             }
@@ -17,6 +17,22 @@ function registrar(req, res) {
     })
 }
 
+async function findAll(req, res) {
+
+    const tramites = await Tramites.find((err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "No existen tramites registrados" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando los tramites" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
 module.exports = {
-    registrar
+    registrar,
+    findAll
 };

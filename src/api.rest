@@ -36,6 +36,24 @@ Content-Type: application/json
     "id_departamento": "sdsdfssdfsdfpudf"
 }
 
+###
+
+POST http://localhost:3977/api/v1/tramites/registrartramites
+Content-Type: application/json
+
+{
+    "tipo_tra": "Contratacion Laboral2",
+    "departamento_id":"12342",
+    "tipo_org": "Banco2",
+    "ciclo_tra":
+    {
+        "ciclo": {
+            "nombre_cic": "ciclo12",
+            "estado_cic": true
+        }
+    }
+}
+
 
 
 ###
@@ -93,3 +111,8 @@ Content-Type: application/json
     "contrasena": "una321",
     "organizacion_id": "3js9f3jf83hfejwrf834bfss"
 }
+
+
+###
+
+GET http://localhost:3977/api/v1/tramites/getAll
