@@ -17,6 +17,22 @@ function registrar(req, res) {
     })
 }
 
+async function findAll(req, res) {
+
+    const tramites = await Tramites.find((err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "No existen tramites registrados" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando los tramites" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
 module.exports = {
-    registrar
+    registrar,
+    findAll
 };
