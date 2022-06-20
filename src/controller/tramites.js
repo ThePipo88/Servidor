@@ -6,10 +6,10 @@ function registrar(req, res) {
 
     tramites.save((err, userStored) => {
         if (err) {
-            res.status(500).send({ message: "El usuario ya existe" });
+            res.status(500).send({ message: "El tramite ya existe" });
         } else {
             if (!userStored) {
-                res.status(404).send({ message: "Error creandon el usuario" });
+                res.status(404).send({ message: "Error creando el tramite" });
             } else {
                 res.status(200).send({ user: userStored });
             }
