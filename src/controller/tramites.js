@@ -32,7 +32,24 @@ async function findAll(req, res) {
     }).clone().catch(function (err) { console.log(err) })
 }
 
+
+async function getByIdDep(req, res) {
+
+    await Tramites.find({ departamento_id: req.params.id }, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "No existen departamentos registrados" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando los departamentos" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
 module.exports = {
     registrar,
-    findAll
+    findAll,
+    getByIdDep
 };

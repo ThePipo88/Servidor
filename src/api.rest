@@ -116,3 +116,6 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3977/api/v1/tramites/getAll
+
+###
+GET  http://localhost:3977/api/v1/tramites/getByIdDep/1
