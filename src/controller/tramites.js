@@ -63,9 +63,26 @@ async function findById(req, res) {
     }).clone().catch(function (err) { console.log(err) })
 }
 
+async function updateTramite(req, res) {
+
+    await Tramites.findByIdAndUpdate(req.params.id, req.body, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El tramite a actualizar no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error actualizando el tramite" });
+            } else {
+                res.status(200).send({ status: 'Tramite actualizado' });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+
+}
+
 module.exports = {
     registrar,
     findAll,
     getByIdDep,
-    findById
+    findById,
+    updateTramite
 };
