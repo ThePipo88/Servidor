@@ -1,5 +1,6 @@
-const bcrypt = require("bcrypt-nodejs");
 const Usuarios = require("../models/usuarios");
+const bcrypt = require("bcrypt-nodejs");
+
 
 function registrar(req, res) {
     const usuario = new Usuarios(req.body);
@@ -24,6 +25,43 @@ function registrar(req, res) {
             })
         }
     })
+}
+
+async function updateUsuario(req, res) {
+
+    if (req.body.contrasena != null) {
+        bcrypt.hash(req.body.contrasena, null, null, function (err, hash) {
+            if (err) {
+                res.status(500).send({ message: "Error enciptando la contrasena." });
+            } else {
+                req.body.contrasena = hash;
+
+                Usuarios.findByIdAndUpdate(req.params.id, req.body, (err, userStored) => {
+                    if (err) {
+                        res.status(500).send({ message: "El usuario a actualizar no existe" });
+                    } else {
+                        if (!userStored) {
+                            res.status(404).send({ message: "Error actualizando el usuario" });
+                        } else {
+                            res.status(200).send({ status: userStored });
+                        }
+                    }
+                }).clone().catch(function (err) { console.log(err) })
+            }
+        });
+    } else {
+        Usuarios.findByIdAndUpdate(req.params.id, req.body, (err, userStored) => {
+            if (err) {
+                res.status(500).send({ message: "El usuario a actualizar no existe" });
+            } else {
+                if (!userStored) {
+                    res.status(404).send({ message: "Error actualizando el usuario" });
+                } else {
+                    res.status(200).send({ status: userStored });
+                }
+            }
+        }).clone().catch(function (err) { console.log(err) })
+    }
 }
 
 async function findById(req, res) {
@@ -74,5 +112,6 @@ async function findByNameAndPassword(req, res) {
 module.exports = {
     registrar,
     findById,
-    findByNameAndPassword
+    findByNameAndPassword,
+    updateUsuario
 };

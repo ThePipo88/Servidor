@@ -6,6 +6,7 @@ const api = express.Router();
 api.post("/usuarios/registrar/usuario", UsuariosController.registrar);
 api.get("/usuarios/obtener/usuario/login/:nombre/:contrasena", UsuariosController.findByNameAndPassword);
 api.get("/usuarios/obtener/usuario/:id", UsuariosController.findById);
+api.put("/usuarios/actualizar/usuario/:id", UsuariosController.updateUsuario);
 
 //Exportar el api
 
