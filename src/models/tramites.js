@@ -5,12 +5,20 @@ const TramitesSchema = mongoose.Schema({
     departamento_id: String,
     descripcion_tra: String,
     ciclo_tra:
-    {
-        ciclo: {
-            nombre_cic: String,
-            estado_cic: Boolean
+        [
+            {
+                ciclo: {
+                    nombre_departamento: String,
+                    id_departamento: String,
+                    estado_cic: Boolean
+                }
+            }
+        ],
+    documentos: [
+        {
+            nombre_documento: String
         }
-    }
+    ]
 });
 
 module.exports = mongoose.model("tramite", TramitesSchema);
