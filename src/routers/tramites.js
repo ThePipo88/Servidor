@@ -6,6 +6,7 @@ const api = express.Router();
 api.post("/tramites/registrartramites", TramitesController.registrar);
 api.get("/tramites/getAll", TramitesController.findAll);
 api.get("/tramites/getByIdDep/:id", TramitesController.getByIdDep);
+api.get("/tramites/obtener/:id", TramitesController.findById);
 
 //Exportar el api
 

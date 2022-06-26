@@ -48,8 +48,24 @@ async function getByIdDep(req, res) {
     }).clone().catch(function (err) { console.log(err) })
 }
 
+async function findById(req, res) {
+
+    const tramite = await Tramites.findById(req.params.id, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El tramite consultado no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando el tramite" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
 module.exports = {
     registrar,
     findAll,
-    getByIdDep
+    getByIdDep,
+    findById
 };
