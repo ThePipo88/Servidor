@@ -32,7 +32,57 @@ async function findAll(req, res) {
     }).clone().catch(function (err) { console.log(err) })
 }
 
+
+async function getByIdDep(req, res) {
+
+    await Tramites.find({ departamento_id: req.params.id }, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "No existen departamentos registrados" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando los departamentos" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
+async function findById(req, res) {
+
+    const tramite = await Tramites.findById(req.params.id, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El tramite consultado no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando el tramite" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
+async function updateTramite(req, res) {
+
+    await Tramites.findByIdAndUpdate(req.params.id, req.body, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El tramite a actualizar no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error actualizando el tramite" });
+            } else {
+                res.status(200).send({ status: 'Tramite actualizado' });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+
+}
+
 module.exports = {
     registrar,
-    findAll
+    findAll,
+    getByIdDep,
+    findById,
+    updateTramite
 };
