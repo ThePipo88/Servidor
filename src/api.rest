@@ -49,20 +49,17 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3977/api/v1/tramites/registrartramites
+POST http://localhost:3977/api/v1/casos/registrar/caso
 Content-Type: application/json
 
 {
-    "tipo_tra": "Contratacion Laboral2",
-    "departamento_id":"12342",
-    "tipo_org": "Banco2",
-    "ciclo_tra":
-    {
-        "ciclo": {
-            "nombre_cic": "ciclo12",
-            "estado_cic": true
-        }
-    }
+    "fecApertura_cas": "08-08-2000",
+    "fecFinalizacion_cas": Date,
+    "nume_cas": Number,
+    "formato_cas": String,
+    "isAbierto_cas": Boolean,
+    "id_tramite": String,
+    "id_organizacion": String
 }
 
 
