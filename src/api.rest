@@ -11,6 +11,17 @@ Content-Type: application/json
     "clave_org": "ussdfna"
 }
 
+###
+PUT http://localhost:3977/api/v1/organizacion/updateById/62b6a66c2f4f49de17bec61b
+Content-Type: application/json
+
+{
+    "nombre_org": "sdfsadf",
+    "descripcion_org": "asd",
+    "tipo_org": "sdf",
+    "correo_org": "crede2sassd@ssgmail.sdfcom"
+}
+
 //Registrar empleados
 ###
 POST http://localhost:3977/api/v1/registrar/usuario
@@ -57,19 +68,21 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3977/api/v1/empleados/obtener/empleadosPorDepartamento/sdsdfssdfsdfpudf
+GET http://localhost:3977/api/v1/usuarios/obtener/usuario/62b74bb205cc83f114e40daa
+
+
 
 ###
-PUT http://localhost:3977/api/v1/empleados/actualizar/62aea5db3397eafc004f2cc1
+GET http://localhost:3977/api/v1/organizacion/getOrganizacion/62ac0ecdf38505c37aa133a0
+
+###
+PUT http://localhost:3977/api/v1/usuarios/actualizar/usuario/62b764538868159bd5a2c9ed
 Content-Type: application/json
 
 {
-    
-"nombre_emp": "Casemiro",
-"apellidos_emp": "Cordero Viales",
-"cedula_emp": "118906655",
-"fecNacimiento_emp": "2023-06-23T04:28:08.109+00:00",
-"tipoEmpleado": "Mesero"
+"nombre_usuario": "kolbi",
+"rol": "Cordero Viales",
+"contrasena": "1234"
 }
 
 ###
@@ -78,11 +91,11 @@ DELETE http://localhost:3977/api/v1/eliminar/6288594676f7807960930e60
 //Usuarios
 
 ###
-POST http://localhost:3977/api/v1/registrar/usuario
+POST http://localhost:3977/api/v1/usuarios/registrar/usuario
 Content-Type: application/json
 
 {
-    "nombre_usuario": "una123",
+    "nombre_usuario": "una123f",
     "rol": "Ingeniero",
     "contrasena": "una321",
     "organizacion_id": "3js9f3jf83hfejwrf834bfss"

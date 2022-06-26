@@ -20,8 +20,41 @@ async function crearOrganizacion(req, res) {
     })
 }
 
+async function findById(req, res) {
+
+    const organizacion = await Organizacion.findById(req.params.id, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "Organizacion consultada no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando la organizacion" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
+
+async function updateOrganizacion(req, res) {
+
+    await Organizacion.findByIdAndUpdate(req.params.id, req.body, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "La organizacion a actualizar no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error actualizando la organizacion" });
+            } else {
+                res.status(200).send({ status: 'Organizacion actualizada' });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
 module.exports = {
-    crearOrganizacion
+    crearOrganizacion,
+    findById,
+    updateOrganizacion
 };
 
 /*

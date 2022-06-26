@@ -79,7 +79,6 @@ async function updateDepartamento(req, res) {
         }
     }).clone().catch(function (err) { console.log(err) })
 
-
 }
 
 
