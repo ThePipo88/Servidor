@@ -13,6 +13,7 @@ const tramitesRoutes = require('./routers/tramites');
 const departamentosRoutes = require('./routers/departamentos');
 const casosRoutes = require('./routers/casos');
 const usuariosRoutes = require('./routers/usuarios');
+const documentosRoutes = require('./routers/documentos');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,7 +34,9 @@ app.use(`/api/${API_VERSION}`, tramitesRoutes);
 app.use(`/api/${API_VERSION}`, casosRoutes);
 //Para cargar las rutas de departamentos
 app.use(`/api/${API_VERSION}`, departamentosRoutes);
-//Para cargar las rutas de departamentos
+//Para cargar las rutas de usuarios
 app.use(`/api/${API_VERSION}`, usuariosRoutes);
+//Para cargar las rutas de documentos
+app.use(`/api/${API_VERSION}`, documentosRoutes);
 
 module.exports = app;
