@@ -8,6 +8,7 @@ api.get("/tramites/getAll", TramitesController.findAll);
 api.get("/tramites/getByIdDep/:id", TramitesController.getByIdDep);
 api.get("/tramites/obtener/:id", TramitesController.findById);
 api.put("/tramites/actualizar/:id", TramitesController.updateTramite);
+api.get("/tramites/obtener/:id", TramitesController.findById);
 
 
 module.exports = api;
