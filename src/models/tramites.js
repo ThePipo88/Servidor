@@ -16,7 +16,10 @@ const TramitesSchema = mongoose.Schema({
         ],
     documentos: [
         {
-            nombre_documento: String
+            nombre_documento: String,
+            descripcion_documento: String,
+            estado_documento: String,
+            tipo_documento: String
         }
     ]
 });
