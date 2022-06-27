@@ -150,7 +150,7 @@ GET http://localhost:3977/api/v1/tramites/getAll
 GET  http://localhost:3977/api/v1/tramites/getByIdDep/1
 
 ###
-GET http://localhost:3977/api/v1/tramites/obtener/62b68a62ecf20fefe6194091
+GET http://localhost:3977/api/v1/tramites/obtener/62b94a30c72bddef30b41b59
 
 ###
 PUT http://localhost:3977/api/v1/tramites/actualizar/62b69237a663d01332ada9d0
