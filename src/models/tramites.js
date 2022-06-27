@@ -7,18 +7,16 @@ const TramitesSchema = mongoose.Schema({
     ciclo_tra:
         [
             {
-                ciclo: {
-                    nombre_departamento: String,
-                    id_departamento: String,
-                    estado_cic: Boolean
-                }
+                nombre_departamento: String,
+                id_departamento: String,
+                estado_cic: Boolean
             }
         ],
     documentos: [
         {
             nombre_documento: String,
             descripcion_documento: String,
-            estado_documento: String,
+            estado_documento: Boolean,
             tipo_documento: String
         }
     ]

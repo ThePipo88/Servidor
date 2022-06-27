@@ -1,14 +1,39 @@
 //Sing up
 ###
-POST http://localhost:3977/api/v1/organizacion/crearOrganizacion
+POST http://localhost:3977/api/v1/tramites/registrartramites
 Content-Type: application/json
 
 {
-    "nombre_org": "Credecoop3ssss34",
-    "descripcion_org": "Solidezsssdf y confianza",
-    "tipo_org": "Financisssdfera",
-    "correo_org": "crede2@ssgmail.sdfcom",
-    "clave_org": "ussdfna"
+    "tipo_tra": "Registro laboral",
+    "departamento_id": "62b945ece783af39ebe033e0",
+    "descripcion_tra": "Se necesita un registro laboral",
+    "ciclo_tra":
+        [
+            {
+                "nombre_departamento": "Finanzas",
+                "id_departamento": "dfsdf",
+                "estado_cic": false
+            },
+            {
+                "nombre_departamento": "Contaduria",
+                "id_departamento": "dfsdf",
+                "estado_cic": true
+            }
+        ],
+    "documentos": [
+        {
+            "nombre_documento": "Cedula",
+            "descripcion_documento": "Se requiere la cedula",
+            "estado_documento": true,
+            "tipo_documento": "PDF"
+        },
+        {
+            "nombre_documento": "Hoja de delincuencia",
+            "descripcion_documento": "Se requiere la hoja de delincuencia",
+            "estado_documento": true,
+            "tipo_documento": "PDF"
+        }
+    ]
 }
 
 ###
@@ -53,13 +78,7 @@ POST http://localhost:3977/api/v1/casos/registrar/caso
 Content-Type: application/json
 
 {
-    "fecApertura_cas": "08-08-2000",
-    "fecFinalizacion_cas": Date,
-    "nume_cas": Number,
-    "formato_cas": String,
-    "isAbierto_cas": Boolean,
-    "id_tramite": String,
-    "id_organizacion": String
+
 }
 
 

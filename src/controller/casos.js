@@ -33,6 +33,20 @@ async function findById(req, res) {
     }).clone().catch(function (err) { console.log(err) })
 }
 
+async function findByIdOrganizacion(req, res) {
+
+    const caso = await Casos.find({ id_organizacion: req.params.id }, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El caso consultado no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando el caso" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
 
 async function findAll(req, res) {
 
@@ -83,6 +97,7 @@ async function deleteCaso(req, res) {
 
 module.exports = {
     registrar,
+    findByIdOrganizacion,
     findById,
     findAll,
     updateCaso,
