@@ -4,6 +4,7 @@ const DocumentosSchema = mongoose.Schema({
     nombre_doc: String,
     url_doc: String,
     estado_doc: Boolean,
+    tipo_documento: String,
     id_tramite: String,
     id_caso: String
 });

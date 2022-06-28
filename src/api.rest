@@ -49,14 +49,19 @@ Content-Type: application/json
 
 //Registrar empleados
 ###
-POST http://localhost:3977/api/v1/registrar/usuario
+POST http://localhost:3977/api/v1/casos/registrar/caso
 Content-Type: application/json
 
 {
-    "nombre_usuario": "String",
-    "rol": "String",
-    "contrasena": "String",
-    "organizacion_id": "Object"
+    "nombre_caso": "String",
+    "fecApertura_cas": "09-09-2000",
+    "fecFinalizacion_cas":  "09-09-2000",
+    "nume_cas": "String",
+    "formato_cas": "String",
+    "isAbierto_cas": true,
+    "id_tramite": "String",
+    "id_departamento": "String",
+    "id_organizacion": "String"
 }
 
 ###
@@ -84,7 +89,7 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3977/api/v1/usuarios/obtener/usuario/62b74bb205cc83f114e40daa
+GET http://localhost:3977/api/v1/casos/getByIdOrganizacion/62b764538868159bd5a2c9eb
 
 
 
@@ -141,16 +146,15 @@ Content-Type: application/json
     "organizacion_id": "3js9f3jf83hfejwrf834bfss"
 }
 
-
 ###
 
 GET http://localhost:3977/api/v1/tramites/getAll
 
 ###
-GET  http://localhost:3977/api/v1/tramites/getByIdDep/1
+GET  http://localhost:3977/api/v1/tramites/getByIdDep/62b945ece783af39ebe033e0
 
 ###
-GET http://localhost:3977/api/v1/tramites/obtener/62b94a30c72bddef30b41b59
+GET http://localhost:3977/api/v1/departamento/obtener/62b94f1803065fdd01fd46ff
 
 ###
 PUT http://localhost:3977/api/v1/tramites/actualizar/62b69237a663d01332ada9d0
