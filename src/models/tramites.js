@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const TramitesSchema = mongoose.Schema({
     tipo_tra: String,
+    organizacion_id: String,
     departamento_id: String,
     descripcion_tra: String,
     ciclo_tra:
         [
             {
-                nombre_departamento: String,
                 id_departamento: String,
                 estado_cic: Boolean
             }

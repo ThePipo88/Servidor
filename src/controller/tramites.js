@@ -32,6 +32,22 @@ async function findAll(req, res) {
     }).clone().catch(function (err) { console.log(err) })
 }
 
+async function findByIdOrg(req, res) {
+
+    const tramites = await Tramites.find({ organizacion_id: req.params.id }, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "No existen tramites registrados" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando los tramites" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
+
 
 async function getByIdDep(req, res) {
 
@@ -84,5 +100,6 @@ module.exports = {
     findAll,
     getByIdDep,
     findById,
-    updateTramite
+    updateTramite,
+    findByIdOrg
 };
