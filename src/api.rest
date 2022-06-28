@@ -148,7 +148,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3977/api/v1/tramites/getAll
+GET http://localhost:3977/api/v1/documentos/finById/62ba809a473f777a9a216e2b
 
 ###
 GET  http://localhost:3977/api/v1/tramites/getByIdDep/62b945ece783af39ebe033e0
@@ -157,11 +157,14 @@ GET  http://localhost:3977/api/v1/tramites/getByIdDep/62b945ece783af39ebe033e0
 GET http://localhost:3977/api/v1/departamento/obtener/62b94f1803065fdd01fd46ff
 
 ###
-PUT http://localhost:3977/api/v1/tramites/actualizar/62b69237a663d01332ada9d0
+PUT http://localhost:3977/api/v1/documentos/actualizar/62ba9aac133f728b297ea11b
 Content-Type: application/json
 
 {
-"tipo_tra": "Limpieza1",
-"departamento_id": "Recursos Humanos1",
-"descripcion_tra": "Se requiere limpiar la oficina1"
+"nombre_doc": "String",
+"url_doc": "String",
+"estado_doc": true,
+"tipo_documento": "String",
+"id_tramite": "String",
+"id_caso": "String"
 }
