@@ -12,14 +12,25 @@ Content-Type: application/json
             {
                 "nombre_departamento": "Finanzas",
                 "id_departamento": "dfsdf",
-                "estado_cic": "A"
+                "estado_cic": false
+            },
+            {
+                "nombre_departamento": "Contaduria",
+                "id_departamento": "dfsdf",
+                "estado_cic": true
             }
         ],
     "documentos": [
         {
             "nombre_documento": "Cedula",
             "descripcion_documento": "Se requiere la cedula",
-            "estado_documento": "A",
+            "estado_documento": true,
+            "tipo_documento": "PDF"
+        },
+        {
+            "nombre_documento": "Hoja de delincuencia",
+            "descripcion_documento": "Se requiere la hoja de delincuencia",
+            "estado_documento": true,
             "tipo_documento": "PDF"
         }
     ]
@@ -38,14 +49,19 @@ Content-Type: application/json
 
 //Registrar empleados
 ###
-POST http://localhost:3977/api/v1/registrar/usuario
+POST http://localhost:3977/api/v1/casos/registrar/caso
 Content-Type: application/json
 
 {
-    "nombre_usuario": "String",
-    "rol": "String",
-    "contrasena": "String",
-    "organizacion_id": "Object"
+    "nombre_caso": "String",
+    "fecApertura_cas": "09-09-2000",
+    "fecFinalizacion_cas":  "09-09-2000",
+    "nume_cas": "String",
+    "formato_cas": "String",
+    "isAbierto_cas": true,
+    "id_tramite": "String",
+    "id_departamento": "String",
+    "id_organizacion": "String"
 }
 
 ###
@@ -73,7 +89,7 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3977/api/v1/usuarios/obtener/usuario/62b74bb205cc83f114e40daa
+GET http://localhost:3977/api/v1/casos/getByIdOrganizacion/62b764538868159bd5a2c9eb
 
 
 
@@ -130,23 +146,25 @@ Content-Type: application/json
     "organizacion_id": "3js9f3jf83hfejwrf834bfss"
 }
 
-
 ###
 
-GET http://localhost:3977/api/v1/tramites/getAll
+GET http://localhost:3977/api/v1/documentos/finById/62ba809a473f777a9a216e2b
 
 ###
-GET  http://localhost:3977/api/v1/tramites/getByIdDep/1
+GET  http://localhost:3977/api/v1/tramites/getByIdDep/62b945ece783af39ebe033e0
 
 ###
-GET http://localhost:3977/api/v1/tramites/obtener/62bb1554bf09ae0000316601
+GET http://localhost:3977/api/v1/departamento/obtener/62b94f1803065fdd01fd46ff
 
 ###
-PUT http://localhost:3977/api/v1/tramites/actualizar/62b69237a663d01332ada9d0
+PUT http://localhost:3977/api/v1/documentos/actualizar/62ba9aac133f728b297ea11b
 Content-Type: application/json
 
 {
-"tipo_tra": "Limpieza1",
-"departamento_id": "Recursos Humanos1",
-"descripcion_tra": "Se requiere limpiar la oficina1"
+"nombre_doc": "String",
+"url_doc": "String",
+"estado_doc": true,
+"tipo_documento": "String",
+"id_tramite": "String",
+"id_caso": "String"
 }

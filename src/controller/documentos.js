@@ -20,6 +20,36 @@ async function crearDocumento(req, res) {
 }
 
 
+async function updateDocumento(req, res) {
+
+    const documento = await Documento.findByIdAndUpdate(req.params.id, req.body, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El documento a actualizar no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error actualizando el documento" });
+            } else {
+                res.status(200).send({ status: 'Documento actualizado' });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
+async function findById(req, res) {
+
+    const documento = await Documento.findById(req.params.id, (err, userStored) => {
+        if (err) {
+            res.status(500).send({ message: "El documento consultado no existe" });
+        } else {
+            if (!userStored) {
+                res.status(404).send({ message: "Error cargando el documento" });
+            } else {
+                res.status(200).send({ user: userStored });
+            }
+        }
+    }).clone().catch(function (err) { console.log(err) })
+}
+
 async function findByNumCaso(req, res) {
 
     await Documento.find({ id_caso: req.params.id }, (err, userStored) => {
@@ -46,5 +76,7 @@ async function findByNumCaso(req, res) {
 
 module.exports = {
     crearDocumento,
-    findByNumCaso
+    findByNumCaso,
+    findById,
+    updateDocumento
 };

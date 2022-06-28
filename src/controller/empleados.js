@@ -65,8 +65,6 @@ async function updateEmpleado(req, res) {
             }
         }
     }).clone().catch(function (err) { console.log(err) })
-
-
 }
 
 
