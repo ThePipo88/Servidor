@@ -12,25 +12,14 @@ Content-Type: application/json
             {
                 "nombre_departamento": "Finanzas",
                 "id_departamento": "dfsdf",
-                "estado_cic": false
-            },
-            {
-                "nombre_departamento": "Contaduria",
-                "id_departamento": "dfsdf",
-                "estado_cic": true
+                "estado_cic": "A"
             }
         ],
     "documentos": [
         {
             "nombre_documento": "Cedula",
             "descripcion_documento": "Se requiere la cedula",
-            "estado_documento": true,
-            "tipo_documento": "PDF"
-        },
-        {
-            "nombre_documento": "Hoja de delincuencia",
-            "descripcion_documento": "Se requiere la hoja de delincuencia",
-            "estado_documento": true,
+            "estado_documento": "A",
             "tipo_documento": "PDF"
         }
     ]
